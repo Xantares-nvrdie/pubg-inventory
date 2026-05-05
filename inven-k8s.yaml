@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backend-kantin
+  name: backend-pubgm
 spec:
   replicas: 3
   selector:
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: backend-api
-        image: x4ntares/kantin-backend:latest
+        image: x4ntares/pubgm-backend:v3
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
@@ -35,7 +35,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: frontend-kantin
+  name: frontend-pubgm
 spec:
   replicas: 1
   selector:
@@ -48,7 +48,7 @@ spec:
     spec:
       containers:
       - name: frontend-ui
-        image: x4ntares/kantin-frontend:latest
+        image: x4ntares/pubgm-frontend:v3
         imagePullPolicy: Always
         ports:
         - containerPort: 80
