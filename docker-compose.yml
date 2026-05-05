@@ -1,0 +1,17 @@
+services:
+  backend:
+    build: ./backend
+    container_name: pubg-backend
+    ports:
+      - "5001:5000"
+    environment:
+      NAMA_PRAKTIKAN: "Bintang Fajar Putra Pamungkas"
+      NIM_PRAKTIKAN: "2405073"
+
+  frontend:
+    build: ./frontend
+    container_name: pubg-frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
